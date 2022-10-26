@@ -43,7 +43,6 @@ public class Order implements Serializable{
 		setOrderStatus(orderStatus);;
 		this.client = client;
 	}
-
 	
 	public Long getId() {
 		return id;
@@ -95,7 +94,4 @@ public class Order implements Serializable{
 		Order other = (Order) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
-
 }

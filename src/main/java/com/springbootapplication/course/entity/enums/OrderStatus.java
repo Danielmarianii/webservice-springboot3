@@ -8,13 +8,11 @@ public enum OrderStatus {
 	DELIVERED(4),
 	CANCELED(5);
 	
-	
 	private int code;
 	
 	private OrderStatus(int code) {
 		this.code = code;
 	}
-	
 	
 	public int getCode() {
 		return code;
@@ -28,6 +26,5 @@ public enum OrderStatus {
 		}
 		throw new IllegalArgumentException("Invalid OrderStatus code");
 	}
-	
 	
 }

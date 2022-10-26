@@ -102,8 +102,4 @@ public class User implements Serializable{
 		User other = (User) obj;
 		return id == other.id;
 	}
-	
-	
-	
-	
 }
