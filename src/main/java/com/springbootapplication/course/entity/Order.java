@@ -7,7 +7,6 @@ import java.util.Objects;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.springbootapplication.course.entity.enums.OrderStatus;
 
 import jakarta.persistence.CascadeType;
@@ -39,7 +38,6 @@ public class Order implements Serializable{
 	@JoinColumn(name = "client_id")
 	private User client;
 	
-	@JsonIgnore
 	@OneToOne(mappedBy = "order", cascade = CascadeType.ALL )
 	private Payment payment;
 	
@@ -101,6 +99,14 @@ public class Order implements Serializable{
 
 	public Set<OrderItem> getItems() {
 		return items;
+	}
+	
+	public Double getTotal() {
+		double sum = 0.0;
+		for (OrderItem x : items) {
+			sum += x.getSubTotal();
+		}
+		return sum;
 	}
 	
 	@Override
