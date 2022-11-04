@@ -16,4 +16,6 @@ Heroku
 
 The application can be tested below
 
-``` http://course-javasb.herokuapp.com/users ```
+``` 
+http://course-javasb.herokuapp.com/users 
+```
